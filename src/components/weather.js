@@ -22,6 +22,12 @@ class Weather extends React.Component{
                         <span className="weather__value">  {this.props.temperature}</span>
                     </p>
                 }
+                
+                {
+                    this.props.temp_min && <p className="weather__key">Min Temperature: 
+                        <span className="weather__value">  {this.props.temp_min}</span>
+                    </p>
+                }          
 
                 {
                     this.props.temp_max && <p className="weather__key">Max Temperature: 

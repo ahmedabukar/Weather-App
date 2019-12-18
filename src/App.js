@@ -12,6 +12,7 @@ class App extends React.Component {
   // Initialize state to undefined for all relevant data points 
   state = {
     temperature: undefined,
+    temp_min: undefined,
     temp_max: undefined,
     city: undefined,
     country: undefined,
@@ -46,6 +47,7 @@ class App extends React.Component {
     if(city && country){
       this.setState({
         temperature: response.main.temp,
+        temp_min: response.main.temp_min,
         temp_max: response.main.temp_max,
         city: response.name,
         country: response.sys.country,
@@ -84,6 +86,7 @@ class App extends React.Component {
                   <Form loadWeather={this.getWeather} />
                   <Weather
                     temperature={this.state.temperature}
+                    temp_min={this.state.temp_min}
                     temp_max={this.state.temp_max}
                     city={this.state.city}
                     country={this.state.country}
