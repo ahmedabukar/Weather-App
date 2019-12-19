@@ -30,16 +30,17 @@ class App extends React.Component {
     // Store city and country values based on current value in form
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
+    const zip_code = e.target.elements.zip_code.value
 
     e.preventDefault();   
     // fetch keyword for API call, await to show it's asynchronous, 
     // URL defined at https://openweathermap.org/current
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`);
-
+    const api_call_zip = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip_code},${country}&units=imperial&appid=${Api_Key}`);
 
     // response stored as json in `response` variable
     const response = await api_call.json();
-    //const response_zip = await api_call_zip.json();
+    const response_zip = await api_call_zip.json();
 
     console.log(response);
     //console.log(response_zip);
@@ -56,6 +57,20 @@ class App extends React.Component {
         icon: response.weather[0].icon,
         speed: response.wind.speed,
         error: ""
+      })
+    }else if(zip_code){
+      this.setState({
+        temperature: response_zip.main.temp,
+        temp_min: response_zip.main.temp_min,
+        temp_max: response_zip.main.temp_max,
+        city: response_zip.name,
+        country: response_zip.sys.country,
+        humidity: response_zip.main.humidity,
+        description: response_zip.weather[0].description,
+        icon: response_zip.weather[0].icon,
+        speed: response_zip.wind.speed,
+        error: ""
+
       })
     }else{
       this.setState({

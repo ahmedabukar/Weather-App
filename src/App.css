@@ -53,6 +53,16 @@ body {
   font-family: "Merriweather", serif;
 }
 
+/* New style for zip code text */
+.title-container__zip {
+  font-size: 15px;
+  font-weight: 100;
+  color: #f16051;;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-family: "Merriweather", serif;
+}
+
 .form-container {
   background-color: #0a2333; 
   height: 90vh;

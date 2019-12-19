@@ -12,6 +12,8 @@ class Form extends React.Component{
                 <form onSubmit = {this.props.loadWeather}>
                     <input type="text" name="city" placeholder="City..."/>
                     <input type="text" name="country" placeholder="Country..."/>
+                    <h1 className="title-container__zip"> Or use zip code </h1>
+                    <input type="text" name="zip_code" placeholder="Zip Code..."/>
                     <button>Get Weather</button>
                 </form>
            
