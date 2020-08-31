@@ -5,7 +5,7 @@ import Form from "./components/form";
 import Titles from "./components/titles";
 
 // API Key to be able to use the OpenWeatherMap API
-const Api_Key = "8d2de98e089f1c28e1a22fc19a24ef04";
+const Api_Key = "";
 
 class App extends React.Component {
 
