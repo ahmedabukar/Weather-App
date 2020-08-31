@@ -1,9 +1,4 @@
-# HCSBootcamp3
+# Weather Scanner
+This is a ReactJS project built to look further into stateless functional components in React.
 
-# Ahmed Abukar
-
-Added new data from the API(/Min/Max Temperature and Wind Speed)
-
-Allows for the use of zip code as an alternative to city and country
-
-Added icon that changes depending on the weather condition
+This project is a weather application that calls the OpenWeatherMap API to render the conditions of supplied cities and countries.
